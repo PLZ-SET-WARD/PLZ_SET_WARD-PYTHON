@@ -1,10 +1,15 @@
 import flask
 import requests
 from urllib import parse
+import os 
+import dotenv
 import pprint
+
 pp = pprint.PrettyPrinter(indent=4)
 
-api_key = 'RGAPI-19d049e3-39a7-4a3b-b966-8d5aa14a224e'
+envfile = dotenv.find_dotenv()
+findenv = dotenv.load_dotenv(envfile)
+api_key = findenv
 request_header = {
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36",
                     "Accept-Language": "ko,en-US;q=0.9,en;q=0.8,es;q=0.7",
